@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Word Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game-container">
+
+    <header>
+        <h1>🎯 Guess the Word PRO</h1>
+        <p class="tagline">Unlimited Words • Smart Gameplay</p>
+    </header>
+
+    <div class="score-board">
+        <div><span>Score</span><b id="score">0</b></div>
+        <div><span>Level</span><b id="level">1</b></div>
+        <div><span>Attempts</span><b id="attempts">5</b></div>
+    </div>
+
+    <!-- Category -->
+    <div id="category-section">
+        <h2>Select Category</h2>
+        <button onclick="selectCategory('animals')">🦁 Animals</button>
+        <button onclick="selectCategory('fruits')">🍎 Fruits</button>
+        <button onclick="selectCategory('countries')">🌍 Countries</button>
+    </div>
+
+    <!-- Game -->
+    <div id="game-area" style="display:none;">
+        <div class="hint-box">
+            <span id="hint-text">???</span>
+            <button onclick="showHint()">Hint (-1)</button>
+        </div>
+
+        <div id="word-display"></div>
+        <div id="message"></div>
+        <div id="keyboard"></div>
+
+        <button onclick="resetGame()">🔄 New Word</button>
+        <button onclick="backToCategories()">⬅ Back</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="game-over-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="correct-word"></p>
+            <button onclick="closeModal()">Play Again</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="words.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
